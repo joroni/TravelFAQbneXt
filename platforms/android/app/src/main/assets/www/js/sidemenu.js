@@ -10,19 +10,33 @@
  * Description  :	Contains methods/functions that deal mainly remote data, UI enhancements and transitions
  *
  **/
+ 
 
 $(document).on("pagecreate", "#main", function () {
     var ic = '<span class="ui-icon-minus ui-btn-icon-notext inlineIcon"></span>';
     $(".ui-li-divider").prepend(ic);
+    
+	//$("#allCountries li").hide();
+	
+	if ($('ul#allCountries li > a.ui-btn').hasClass('ui-icon-carat-r')) {
+					$(this).addClass('ui-icon-carat-rs');
+				}
+	
 });
 $(document).on("click", ".collapseExpand", function () {
     var collapseAll = this.id == "btnCollapse";
     if (collapseAll) {
         $(".ui-li-divider .ui-icon-minus").click();
+  //$('a.ui-btn.ui-btn-icon-right').removeClass('ui-icon-carat-r');
     } else {
         $(".ui-li-divider .ui-icon-plus").click();
+    //    $('a.ui-btn.ui-btn-icon-right').removeClass('ui-icon-carat-r');
     }
+    
 });
+
+
+
 
 $(document).on("click", '.ui-li-divider', function (e) {
     var IsCollapsed = false;

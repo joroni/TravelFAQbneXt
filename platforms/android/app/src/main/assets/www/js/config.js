@@ -5,9 +5,9 @@
 *
 * REVISION HISTORY
 *
-* Author,email :
-* Date Revised :
-* Description  :
+* Author,email :	John Raymund Niconi, niconi@coca-cola.com
+* Date Revised :	April, 2016
+* Description  :	UI enhancements, geolocation fix, side menu collapsible
 *
 **/
 
@@ -23,10 +23,13 @@ config.checkTabletMode = function() {
 }
 
 config.appTitle = "Travel FAQ";
-config.appInternalVersion = "3.2.0";
+config.appInternalVersion = "3.0.0";
 config.tabletMode = config.checkTabletMode();//config.getDeviceType();
 config.defaultCountryCode = 'CN';
-config.updateAvailableMessage = 'New version of data is available for download.\n\nKindly sync with server to get the latest Travel FAQ data.';
+//config.updateAvailableMessage = 'New version of data is available for download.\n\nKindly sync with server to get the latest Travel FAQ data.';
+
+config.updateAvailableMessage = 'New version of data is available for download.\n\nKindly tap the top right corner Gear then Update to get the latest Travel FAQ data.';
+ 
 
 config.localDBVersionKey = "tfaq.data.version";
 config.localDBName = "TravelFAQData";
@@ -36,6 +39,7 @@ config.localDBVersion = "1.0";
 config.localDBCountryTable = 'country_detail';
 
 //config.remoteServerAddress = "http://icokecontent.chinacloudapp.cn/store/travelfaq/";
+//config.remoteServerAddress = "http://ec2-54-214-99-121.us-west-2.compute.amazonaws.com/travelfaq/";
 config.remoteServerAddress = "/";
 config.remoteDataFileName = "TravelFAQData.xml";
 config.remoteDataFlagsFolder = "flags";
@@ -50,13 +54,14 @@ config.nominatimApiURL = 'https://nominatim.openstreetmap.org/reverse?format=jso
 config.mapCoords1Key = '<latlng_1>';
 config.mapCoords2Key = '<latlng_2>';
 
+//key=AIzaSyA1XtXp7ZeoBm-i22Oc1RS0BNpdnhwTytM
 
-//config.defaultIconPath = 'images/icons/flags/'+ code.toLowerCase() + '.png?' + Math.random();
-//config.defaultIconPathStatic = 'images/icons/flags/'+ code.toLowerCase() + '.png?';
-//config.localImageFolderPathStatic = "images/icons/flags';
+
 
 config.defaultIconPath = 'images/icons/default.png';
-config.localImageFolderPath = 'images/icons/flags';
+//config.localImageFolderPath = 'flags';
+config.localImageFolderPath = 'images/icons/flags'; /* HACK localized for sidebar */
+config.localImageFolderPath2 = 'images/icons/flags'; /* HACK localized for sidebar */
 config.fileSystemRootFolder = '';
 
 
@@ -64,15 +69,17 @@ config.fileSystemRootFolder = '';
 
 
 config.detailLabels = [
-	{text:"Voice Call",icon:"voice.png",id:"voicecall"},
-	{text:"InterCall",icon:"intercall.png",id:"intercall"},
-	{text:"Office Location",icon:"office.png",id:"officeloc"},
-	{text:"KO Metrics / Facts",icon:"metrics.png",id:"kometrics"},
-	{text:"Preferred Hotels",icon:"hotel.png",id:"prefhotel"},
+	{text:"Voice Call",icon:"call.svg",id:"voicecall"},
+	{text:"InterCall",icon:"intercall.svg",id:"intercall"},
+	{text:"Office Location",icon:"office.svg",id:"officeloc"},
+	{text:"KO Metrics / Facts",icon:"stock.svg",id:"kometrics"},
+	{text:"Preferred Hotels",icon:"hotel.svg",id:"prefhotel"},
 	{text:"Useful Info",icon:"info.png",id:"usefulinfo"}
 ];
-	
-	
+
+
 config.fixCountryFilter = false;
-config.locationCoarseTimeout = 15000;
+config.locationCoarseTimeout = 30000;
 config.geoJSONCountriesFile = "countries.geojson";
+
+

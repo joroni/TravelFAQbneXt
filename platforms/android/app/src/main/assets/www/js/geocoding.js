@@ -133,6 +133,9 @@ geocoding.getCurrentCountry = function( callBack ) {
 		}
 	);		
 	
+
+
+	
 	//this is if timeout won't work.
 	setTimeout(function() {		
 		if (geocoding.gpReturned==false) {
@@ -178,6 +181,21 @@ geocoding.getCountryCodeOffline = function(lat,long) {
 	}
 }
 
+
+
+ function getLocation(){
+				if(navigator.geolocation){
+			   // timeout at 60000 milliseconds (60 seconds)
+			  
+               var options = {timeout:60000};
+			   navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+			 //  $("#locating_u").hide();
+            }
+            
+            else{
+               alert("Sorry, browser does not support geolocation!");
+            }
+         }
 //based on http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 geocoding.PointInPolygon = function(point, polygon) {
 	var nvert = polygon.length;
@@ -214,3 +232,25 @@ geocoding.loadLocalGeoJSONCountries = function() {
 	}	
 	return ret;	
 }
+
+
+
+// Added by JR
+/*
+navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000 });
+function onSuccess(position) {
+var lat=position.coords.latitude;
+var lang=position.coords.longitude;
+
+//Google Maps
+var myLatlng = new google.maps.LatLng(lat,lang);
+var mapOptions = {zoom: 4,center: myLatlng}
+var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+var marker = new google.maps.Marker({position: myLatlng,map: map});
+}
+function onError(error) {
+alert('code: ' + error.code + '\n' +
+'message: ' + error.message + '\n');
+}
+google.maps.event.addDomListener(window, 'load', onSuccess);
+*/
