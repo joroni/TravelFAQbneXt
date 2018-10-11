@@ -40,7 +40,7 @@ config.localDBCountryTable = 'country_detail';
 
 //config.remoteServerAddress = "http://icokecontent.chinacloudapp.cn/store/travelfaq/";
 //config.remoteServerAddress = "http://ec2-54-214-99-121.us-west-2.compute.amazonaws.com/travelfaq/";
-config.remoteServerAddress = "/";
+config.remoteServerAddress = "https://raw.githubusercontent.com/joroni/TravelFAQbneXt/master/www/";
 config.remoteDataFileName = "TravelFAQData.xml";
 config.remoteDataFlagsFolder = "flags";
 config.remoteConnectTimeout = 5000;
