@@ -6,7 +6,7 @@
     <access origin="http://icokecontent.chinacloudapp.cn/store/travelfaq" subdomains="true" />
     <content src="index.html" />
     <preference name="permissions" value="none" />
-    <preference name="orientation" value="default" />
+    <preference name="orientation" value="portrait" />
     <preference name="phonegap-version" value="cli-6.4.0" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
