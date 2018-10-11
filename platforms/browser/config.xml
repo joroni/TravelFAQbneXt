@@ -3,8 +3,8 @@
     <feature name="Camera">
         <param name="browser-package" value="Camera" />
     </feature>
-    <name>Travel FAQ</name>
-    <description>TCCC Travel FAQ for iOS</description>
+    <name>Travel FAQ Demo</name>
+    <description>TCCC Travel FAQ for Demo</description>
     <author email="support@chinacloudapp.com" href="http://icokecontent.chinacloudapp.cn">GSS Manila COE</author>
     <access origin="http://icokecontent.chinacloudapp.cn/store/travelfaq" subdomains="true" />
     <content src="index.html" />
