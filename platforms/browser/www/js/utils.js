@@ -271,55 +271,9 @@ function isDesktop() {
 	else return false;
 }
 
-
-
-function checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'Offline';
-
-    alert('Connection type: ' + states[networkState]);
-}
-
-
-
 function hasConnection() {
-
-	var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'Offline';
-
-	//alert('Connection type: ' + states[networkState]);
-	console.log ('Connection type: ' + states[networkState]);
-	//$('<div id="connection_status"></div>').insertAfter('#header');
-
-	if (states[networkState] == 'Offline') {
-		return false;
-		$('#connection_status').addClass('offline');
-		$('#connection_status').removeClass('online');
-	}  else {
-		$('#connection_status').addClass('online');
-		$('#connection_status').removeClass('offline');
-		return true;
-		
-	}
-	/*if (isDesktop()) return true; //when in desktop browser
+	
+	if (isDesktop()) return true; //when in desktop browser
 	
 	if ((typeof navigator.connection)=="undefined") {
 		return false;
@@ -335,7 +289,7 @@ function hasConnection() {
 		return false;
 	}
 
-	return true;*/
+	return true;
 }
 
 function localFileExists(path) {

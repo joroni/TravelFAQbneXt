@@ -38,6 +38,7 @@ var app = {
 		$.support.cors = true;
 		$.mobile.allowCrossDomainPages = true;
 		appUI.initialize();
+			console.log('INITIALIZING APP...');
     },
     // Bind Event Listeners
     //
@@ -47,6 +48,7 @@ var app = {
 		if (isDesktop()) {
 			$(document).ready(function(e) {
 				app.onDeviceReady();
+			
             });
 		}
 		
@@ -62,10 +64,18 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
 		
+
+
 	onDeviceReady: function() {	
 		document.addEventListener("online", 
 		function() {
 			D('Connection established.');
+			console.log('STARTING APP...');
+			appUI.checkUpdate();
+			console.log('CHECK UPDATES...');
+			
+			    navigator.splashscreen.hide();
+    StatusBar.styleLightContent();
 			appUI.checkUpdate();
 		},
 		false);
@@ -105,3 +115,6 @@ var app = {
 	
 
 };
+
+
+
